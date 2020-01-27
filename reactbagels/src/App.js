@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import BagelContainer from './BagelContainer'
 import BagelForm from './BagelForm'
 
-function App() {
+class App extends Component {
+
+  
+  render(){
   return (
     <div className="App">
       <h1>Reactive Bagels</h1>
@@ -11,6 +14,7 @@ function App() {
       <BagelContainer/>
     </div>
   );
+}
 }
 
 export default App;

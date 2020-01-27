@@ -5,10 +5,11 @@ function BagelContainer(){
   //   bagels.map(bagel =>{
   //     <Bagel/>
   //   })
-  
+
   return(
-    <h2>This is the Bagel Container</h2>
-    // {}
+    <div>
+      <h2>This is the Bagel Container</h2>
+    </div>
   )
 
 }

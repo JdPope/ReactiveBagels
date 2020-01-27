@@ -12,7 +12,11 @@ class App extends Component {
   componentDidMount(){
     fetch('http://bagel-api-fis.herokuapp.com/bagels')
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => {
+        this.setState({
+          bagels: result
+        })
+      })
   }
 
   render(){
@@ -20,7 +24,7 @@ class App extends Component {
     <div className="App">
       <h1>Reactive Bagels</h1>
       <BagelForm/>
-      <BagelContainer/>
+      <BagelContainer bagels={this.state.bagels}/>
     </div>
   );
 }

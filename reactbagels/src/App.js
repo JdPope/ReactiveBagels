@@ -1,24 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import BagelContainer from './BagelContainer'
+import BagelForm from './BagelForm'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          I Would Like to Learn React
-        </a>
-      </header>
+      <h1>Reactive Bagels</h1>
+      <BagelForm/>
+      <BagelContainer/>
     </div>
   );
 }

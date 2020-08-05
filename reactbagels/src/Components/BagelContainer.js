@@ -5,7 +5,7 @@ import '../Styles/style.css';
 
 function BagelContainer(props){
 const bagelItem = props.bagels.map(bagel => {
- return <Bagel key={bagel.id} bagel={bagel} delete={props.deleteBagel}/>
+ return <Bagel key={bagel.id} bagel={bagel} delete={props.deleteBagel} action={props.action}/>
 })
   
   return(

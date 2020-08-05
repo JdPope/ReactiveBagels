@@ -3,7 +3,9 @@ import Bagel from './bagel'
 
 
 function BagelContainer(props){
-  const bagelItem = props.bagels.map(bagel => <Bagel key={bagel.id} bagel={bagel.type}/>)
+const bagelItem = props.bagels.map(bagel => {
+ return <Bagel key={bagel.id} bagel={bagel} delete={props.deleteBagel}/>
+})
   
   return(
     <div>

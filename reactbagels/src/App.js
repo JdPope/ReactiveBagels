@@ -28,13 +28,24 @@ class App extends Component {
     .then(bagel => this.setState({ bagels: [...this.state.bagels, bagel] }))
   }
 
+  deleteBagel = bagel => {
+    const newBagels = this.state.bagels.filter(newBagel => {
+      return newBagel !== bagel
+    })
+
+    this.setState({ bagels: newBagels })
+    fetch(`${BASE_URL}/${bagel.id}`, {
+      method: "DELETE"
+    })
+  }
+
 
   render(){
   return (
     <div className="App">
       <h1>Reactive Bagels</h1>
       <BagelForm makeBagel={this.makeBagel}/>
-      <BagelContainer bagels={this.state.bagels}/>
+      <BagelContainer bagels={this.state.bagels} deleteBagel={this.deleteBagel}/>
     </div>
   )
 }

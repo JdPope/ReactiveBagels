@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './App.css';
-import BagelContainer from './BagelContainer'
-import BagelForm from './BagelForm'
-const BASE_URL = 'http://bagel-api-fis.herokuapp.com/bagels'
+import './Styles/style.css';
+import BagelContainer from './Components/BagelContainer';
+import BagelForm from './Components/BagelForm';
+const BASE_URL = 'http://bagel-api-fis.herokuapp.com/bagels';
 class App extends Component {
   
   state = {

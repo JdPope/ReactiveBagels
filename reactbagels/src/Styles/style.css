@@ -1,0 +1,25 @@
+.App {
+    text-align: center;
+}
+
+h1{
+    border: 1px solid black;
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin:90px;
+}
+
+.bagel-card{
+    margin: 50px;
+    border: 1px solid black;
+}
+
+.form{
+    margin: 90px;
+    border: 1px solid black; 
+}

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class BagelForm extends Component{
 
     state = {
-        type:'default bagel'
+        type:'create bagel here'
       }
     
     handleChange = event => {
@@ -15,6 +15,7 @@ class BagelForm extends Component{
     handleSubmit = event => {
       event.preventDefault()
       this.props.makeBagel(this.state)
+      event.target.reset()
     }
 
     render(){
@@ -22,10 +23,7 @@ class BagelForm extends Component{
         <>
         <h2>This is the Bagels Form</h2>
         <form onSubmit={this.handleSubmit}>
-        <label>
-            Make a Bagel!
-            <input id="bagel" name="type" type="text" value={this.state.type} onChange={this.handleChange} />
-          </label>
+          <input id="bagel" name="type" type="text" value={this.state.type} onChange={this.handleChange} />
           <button type="submit">Make Bagel!</button>
         </form>
         </>

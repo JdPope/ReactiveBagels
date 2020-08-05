@@ -4,7 +4,7 @@ import BagelContainer from './BagelContainer'
 import BagelForm from './BagelForm'
 const BASE_URL = 'http://bagel-api-fis.herokuapp.com/bagels'
 class App extends Component {
-
+  
   state = {
     bagels: []
   }
@@ -12,15 +12,10 @@ class App extends Component {
   componentDidMount(){
     fetch(BASE_URL)
       .then(response => response.json())
-      .then(result => {
-        this.setState({
-          bagels: result
-        })
-      })
+      .then(bagels => this.setState({bagels}))
   }
 
   makeBagel = bagel => {
-    console.log(bagel)
     return fetch(BASE_URL, {
       method:'POST',
       headers:{
@@ -28,8 +23,9 @@ class App extends Component {
         'Content-Type':'application/json'
       },
       body: JSON.stringify(bagel)
-    }).then(this.parseJSON)
-      .then(bagel => this.setState({ bagels: [...this.state.bagels, bagel] }))
+    })
+    .then(response => response.json())
+    .then(bagel => this.setState({ bagels: [...this.state.bagels, bagel] }))
   }
 
 
@@ -40,7 +36,7 @@ class App extends Component {
       <BagelForm makeBagel={this.makeBagel}/>
       <BagelContainer bagels={this.state.bagels}/>
     </div>
-  );
+  )
 }
 }
 
